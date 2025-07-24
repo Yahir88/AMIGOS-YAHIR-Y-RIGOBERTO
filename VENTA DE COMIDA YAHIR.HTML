@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>RESTAURANT THE FRIENDS</title>
+  <link rel="icon" type="image/png" href="=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx6KSP0srp_6f56lJGfKoA2c8PLwtjbDmr9Q&s740">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #001F3F;
+      margin: 0;
+      color: White;
+    }
+
+    header {
+      background-image: url(https://images.unsplash.com/photo-1616036740257-9449ea1f6605?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YXRhcmRlY2VyJTIwcGxheWF8ZW58MHx8MHx8fDA%3D);
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      background-color: rgba(0, 0, 0, 0.5);
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    nav {
+      background-color: #00CED1;
+      padding: 10px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: black;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #00f0ff;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .intro {
+      background-color: #000080;
+      text-align: center;
+    }
+
+    .intro h2 {
+      color: #dddddd;
+    }
+
+    .intro p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 16px;
+      color: #dddddd;
+    }
+
+    .contenedor {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .producto {
+      background-color: #191970;
+      width: 300px;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .producto:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    p {
+      font-size: 14px;
+      color: #dddddd;
+    }
+
+    .boton-compra {
+      background-color: #27ae60;
+      color: white;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+
+    .boton-compra:hover {
+      background-color: #87ceeb;
+    }
+
+    .contacto {
+      text-align: center;
+      padding: 20px;
+      background-color: #00CED1;
+    }
+
+    .contacto a {
+      text-decoration: none;
+      margin: 0 15px;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    .contacto a:hover {
+      color: #00f0ff;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .popup-contenido {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      animation: entrada 0.5s ease;
+      color: Black;
+    }
+
+    .popup-contenido h2, .popup-contenido p {
+      color: Black;
+    }
+
+    .cerrar {
+      margin-top: 15px;
+      padding: 8px 20px;
+      background-color: #27ae60;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @keyframes entrada {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>RESTAURANT THE FRIENDS - VENTA DE COMIDA EN LÍNEA</h1>
+</header>
+
+<nav>
+  <a href="#intro">Inicio</a>
+  <a href="#Churrascos">Churrascos</a>
+  <a href="#Amburguesas">Amburguesas</a>
+  <a href="#Pollo Asado">Pollo Asado</a>
+  <a href="#Papas fritas">Papas fritas</a>
+  <a href="#contacto">Contacto</a>
+</nav>
+
+<section class="intro" id="intro">
+  <h2>¿Somos Restaurante los amigos Yahir y Rigoberto?</h2>
+  <p>Ven y descubre el sabor de la amistad en nuestro restaurante. Te ofrecemos deliciosas comidas preparadas con amor y dedicación para que disfrutes con tus amigos y familiares. Nuestro menu es variado y con opciones para todos los gustos y preferencias. ¡Te esperamos con una sonrisa y un plato lleno de sabor ven y disfruta!</p>
+  <img src="https://media.istockphoto.com/id/857744820/es/vector/fachada-de-dise%C3%B1o-plano-del-vector-restaurante.jpg?s=612x612&w=0&k=20&c=w_40ns1HhwDqXx64lnjv_Drlha-H1L9gQ4vHXTSJ5mM=" alt="Ejemplo" style="max-width: 30%; height: auto; border-radius: 10px; margin-top: 20px;">
+</section>
+
+<section id="Platillos de Comida">
+  <h2>Comida</h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu3bewPfIPQ-Mgbun0rLV60bImQMmREz1CPQ&s" alt="Churrascos">
+      <h2>Churrascos</h2>
+      <p>Perfecto para un almuerzo en familia.</p>
+      <p><strong>Q.60.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Churrascos')">Comprar</button>
+    </div>
+  </div>
+
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://www.burgerfi.com/wp-content/uploads/2025/01/classic-meat-burger-with-fries-scaled.webp" alt="Amburguesas con papas">
+      <h2>Amburguesas con papas</h2>
+      <p>Perfecta para que disfrutes en familia.</p>
+      <p><strong>Q.45.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Amburguesas con papas')">Comprar</button>
+    </div>
+  </div>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZFdVz828UTsIjDXMDjxt6vnFtX-Rpc2qs6J8lJZ-9vUf1VwsZ-Zg5UtpjDxL2Tq3p1Qc&usqp=CAU" alt="Pollo Asado">
+      <h2>Pollo Asado</h2>
+      <p>El sabor lo tenemos aki.</p>
+      <p><strong>Q.80.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Pollo Asado')">Comprar</button>
+    </div>
+  </div>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTvz1dcSUzeuSRJVKCs9uayMW_WEi7Cd5_qw&s" alt="Papas fritas">
+      <h2>Papas fritas</h2>
+      <p>Deliciosas papitas para que las disfrutes en familia.</p>
+      <p><strong>Q.15.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Papas Fritas')">Comprar</button>
+    </div>
+  </div>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIQEneMJmZcnzKAt5nfkCsgLzWTWPBbsCyFg&s" alt="Platillo de Boxboles">
+      <h2>Platillo de Boxboles</h2>
+      <p>Muy ricos.</p>
+      <p><strong>Q.35.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Platillo de Boxboles')">Comprar</button>
+    </div>
+  </div>
+  
+   <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGpdfCTkq2nYAEXNCKATx1pVaNyid3ZKcO7w&s" alt="Fiambre">
+      <h2>Fiambre</h2>
+      <p>Para que lo disfrutes en Familia y amigos.</p>
+      <p><strong>Q.200.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Fiambre')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://img-global.cpcdn.com/recipes/869eedfc5c3b4ebf/680x781cq80/camarones-empanizados-foto-principal.jpg" alt="Camarones empanizados">
+      <h2>Camarones empanizados</h2>
+      <p>Con ensala, papas salteadas.</p>
+      <p><strong>Q.80.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Camarones empanizados')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://hacerdecomer.com/img/recipes/pasta-con-camarones.jpg" alt="Tallarines al estilo Italiano">
+      <h2>Tallarines al estilo Italiano</h2>
+      <p>Con pasta italiana y crema (Camarones pollo).</p>
+      <p><strong>Q.80.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Tallarines al estilo Italiano')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://www.recetasnestle.com.ve/sites/default/files/srh_recipes/b7532d24e9dfe3f476fd24890311a2d8.jpg" alt="Pollo al limón">
+      <h2>Pollo al limón</h2>
+      <p>Con ensalada rusa</p>
+      <p><strong>Q.100.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Pollo al limón')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-O4Izsf0d6PhDx-mfoxfkPUPxk1ySo2gzdg&s" alt="Mar y tierra">
+      <h2>Mar y tierra</h2>
+      <p>8 onzas de carne 12 unidades de camarón verduras de temporada debidamente salteadas</p>
+      <p><strong>Q.70.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Mar y Tierra')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://tildaricelive.s3.eu-central-1.amazonaws.com/wp-content/uploads/sites/29/2023/05/09144414/Maki-roll-invertido-relleno-de-aguacate-langostino-en-tempura-y-pepino_K2F6221.jpg" alt="Sushi">
+      <h2>Sushi</h2>
+      <p>De camarones salmón, res cangrejo y pollo</p>
+      <p><strong>Q.90.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Camarones empanizados')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVHrHON7FBwSIc-AmsQ_rrAhNUD2v-rRATuQ&s" alt="Mojarras Fritas">
+      <h2>Mojarras fritas</h2>
+      <p>Con ensalada y papas fritas</p>
+      <p><strong>Q.75.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Mojarras fritas')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://degusta-pic-sq.b-cdn.net/pix_16_101701_29566_62984ea12397d.jpg" alt="Pullazo">
+      <h2>Pullazo</h2>
+      <p>Guacamole, arroz y frijoles volteados y etc</p>
+      <p><strong>Q.75.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Pullazo')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://masecacentroamerica.com/wp-content/uploads/2022/09/shutterstock_2034044399-scaled.jpg" alt="Jocón">
+      <h2>Jocón</h2>
+      <p>Arroz y verdaduras de temporada</p>
+      <p><strong>Q.30.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Jocón')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://www.recetas-guatemala.com/base/stock/Recipe/248-image/248-image_web.jpg" alt="Kak'ik">
+      <h2>Kak'ik</h2>
+      <p>Carne de pavo con arroz, tamalitos y verduras de temporada.</p>
+      <p><strong>Q.150.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Kak'ik')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://www.recetasnestle.com.ve/sites/default/files/styles/recipe_detail_desktop_new/public/srh_recipes/0b710f7226cdd7c4cd4c5145e987da3a.jpg?itok=tPv0B0hm" alt="Pllo entero rellenado al estilo the friends">
+      <h2>Pollo entero rellenado al estilo the friends</h2>
+      <p>Con papas salteadas o pure de papa, frijoles parados y ensalada mixta.</p>
+      <p><strong>Q.150.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Pollo entero al estilo the friends')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<section id="Bebidas">
+  <h2>Bebidas</h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://media.istockphoto.com/id/477567550/es/foto/bebidas-helada.jpg?s=612x612&w=0&k=20&c=utvO5blVI8Ti37mn4vHsxxDo5ZvWlQO1RV6mh5e_Uvs=" alt="Bebidas">
+      <h2>Gaseosas</h2>
+      <p>Cocacolas, Fantas y Sprite.</p>
+      <p><strong>Q.10.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Cocacolas, Fantas y Sprite')">Comprar</button>
+    </div>
+  </div>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://www.mexicoenmicocina.com/wp-content/uploads/2018/10/coctel-paloma-6.jpg" alt="Paloma">
+      <h2>Paloma</h2>
+      <p>Tequila, toronja y limón</p>
+      <p><strong>Q.40.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Paloma')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://www.maxionline.ec/wp-content/uploads/2019/11/SANGRIA-ROJA.jpg" alt="Sangria">
+      <h2>Sangria</h2>
+      <p>3% de alcohol, 5% de rosa jamaica, 3% de jugo de naranja y frutas de temporada</p>
+      <p><strong>Q.45.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Sangria')">Comprar</button>
+    </div>
+  </div>
+</section>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://www.demoslavueltaaldia.com/sites/default/files/smothie_de_fresa_y_platano_g.png" alt="Bebidas">
+      <h2>Licuados</h2>
+      <p>De banano y fresa.</p>
+      <p><strong>Q.25.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Licuados')">Comprar</button>
+    </div>
+  </div>
+  
+   <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://cuberspremium.com/wp-content/uploads/2017/07/receta-mojito.jpg" alt="Mojito">
+      <h2>Mojito</h2>
+      <p>Ron, limón, azucar, mente o hierbabuena y agua con gas.</p>
+      <p><strong>Q.45.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Mojito')">Comprar</button>
+    </div>
+  </div>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgiwWfnRebLDnNZ0RgVibUhXGh9f82blJD_O2Y7qeU4LCA5kRhBpoULGjkL8sGNB1_huNFKU6DoYSs9G61x0cQJXRRF3wG1KUBxPuEd0hWWtcpqTP8GIYq0gISIRQxxRPb_XnjTXbP8q_o/s1600/co%25CC%2581ctel-de-jamaica-y-chipotle_II.jpg" alt="Vodka de jamaica">
+      <h2>Vodka de jamaica</h2>
+      <p>Jamaica y limón.</p>
+      <p><strong>Q.45.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Vodka de jamaica')">Comprar</button>
+    </div>
+  </div>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://i.ytimg.com/vi/cY7nWNe1Yzs/maxresdefault.jpg" alt="Bebidas">
+      <h2>Refrescos</h2>
+      <p>De piña, sandia y melocoton.</p>
+      <p><strong>Q.25.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Refrescos')">Comprar</button>
+    </div>
+  </div>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://vod-hogarmania.atresmedia.com/cocinatis/images/images01/2019/04/29/5cc6daecfa7dec0001ed6e84/1239x697.jpg" alt="Naranjada con soda">
+      <h2>Naranjada con soda</h2>
+      <p>Con soda o jugo simple</p>
+      <p><strong>Q.18.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Naranjada con soda')">Comprar</button>
+    </div>
+  </div>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://images.aws.nestle.recipes/original/45078510e50d3614132d581921dccddb_limonada_con_menta_-_verano_wow_-_costco_.jpg" alt="Limonada con soda">
+      <h2>Limonada con soda</h2>
+      <p>Con soda o con jugo simple.</p>
+      <p><strong>Q.18.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Limonada con soda')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://images.mrcook.app/recipe-image/0192219f-952a-70a9-b2ef-e047d0eccb35" alt="Smoothie">
+      <h2>Smoothie</h2>
+      <p>De fresa y mora.</p>
+      <p><strong>Q.25.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Smoothie')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://www.veganmilker.com/wp-content/uploads/horchatas-900x600-1.jpg" alt="Horchata Italiafa">
+      <h2>Horchata Italiana</h2>
+      <p>Con leche condensada, leche vaporada, pepitoria y esencia de bainilla</p>
+      <p><strong>Q.20.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Horchata Italiana)">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://www.cafes-santacristina.com/sites/default/files/2023-09/capuchino.jpg" alt="Capuchinos">
+      <h2>Capuchinos</h2>
+      <p>Deliciosos para una tarde lluviosa.</p>
+      <p><strong>Q.5.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Capuchinos')">Comprar</button>
+    </div>
+  </div>
+</section>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://www.indurmex.com/wp-content/uploads/2019/06/Los-Vasos-de-Papel-son-Ideales-para-Todos-los-Caf%C3%A9s.jpg" alt="Bebidas">
+      <h2>Cafe</h2>
+      <p>Cafe con leche.</p>
+      <p><strong>Q.15.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Cafe')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<section id="Tostadas, Dobladas y Shucos">
+  <h2>Tostadas, Dobladas y Shucos</h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://cdn7.kiwilimon.com/recetaimagen/24/960x640/3383.jpg.jpg" alt="Tostadas">
+      <h2>Tostadas de pollo</h2>
+      <p>Ideal para una pequeña refa.</p>
+      <p><strong>Q.10.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Tostadas')">Comprar</button>
+    </div>
+  </div>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuoaDwBglswbmApclrORieCBDJvXUI5H0vWQ&s" alt="Dobladas">
+      <h2>Dobladas</h2>
+      <p>Ideal para comer con amigos</p>
+      <p><strong>Q.15.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Dobladas')">Comprar</button>
+    </div>
+  </div>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjl_0ZoB8LX8f9zF6IOKVBsgzVSIJ0Xqr87g&s" alt="Shucos">
+      <h2>Shucos</h2>
+      <p>Ideal para que disfurtes con tu enamorada.</p>
+      <p><strong>Q.25.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Shucos')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<section id="Panes">
+  <h2>Panes</h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://cdn7.kiwilimon.com/recetaimagen/39534/640x640/51686.jpg.jpg" alt="Panes de pollo">
+      <h2>Panes de pollo</h2>
+      <p>Deliciosos para que disfrutes en familia y con tu persona favorita.</p>
+      <p><strong>Q.20.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Panes de pollo')">Comprar</button>
+    </div>
+  </div>
+  
+  <h2></h2>
+  <div class="contenedor">
+    <div class="producto">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQopfVmbnz9Txk8nunFznI2x-rxhIhIDxehag&s" alt="Panes de jamón">
+      <h2>Panes de jamón</h2>
+      <p>Con un sabor especial</p>
+      <p><strong>Q.15.00</strong></p>
+      <button class="boton-compra" onclick="mostrarPopup('Panes de jamón')">Comprar</button>
+    </div>
+  </div>
+</section>
+
+<div class="contacto" id="contacto">
+  <h3>Puedes Contáctanor a Travez de:</h3>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" alt="Ejemplo" style="max-width: 2%; height: auto; border-radius: 10px; margin-top: 20px;">
+  <a href="https://wa.me/+50231873520" target="_blank">WhatsApp</a>
+  <img src="https://i.pinimg.com/474x/0b/37/08/0b3708dfbb8f16c4ea3b80b374765159.jpg" alt="Ejemplo" style="max-width: 2%; height: auto; border-radius: 10px; margin-top: 20px;">
+  <a href="mailto:yahirramos991@gmail.com">Correo</a>
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZmqVSd1B1P6vkhZGB9ZhNe5OjU97a2FJAKcdOIbWqF1P2-IykuImjgaSpcwXSJIT7jXw&usqp=CAU" alt="Ejemplo" style="max-width: 2%; height: auto; border-radius: 10px; margin-top: 20px;">
+  <a href="tel:+50231873520">Llamada</a>
+</div>
+
+<div class="popup" id="popup">
+  <div class="popup-contenido">
+    <img src="https://img.freepik.com/fotos-premium/casilla-verificacion-3d-marca-verificacion-ilustracion-3d_115990-5156.jpg" alt="Comprado">
+    <h2>¡Tu compra ha sido realizada con éxito!</h2>
+    <p id="mensajeProducto"></p>
+    <button class="cerrar" onclick="cerrarPopup()">Hecho</button>
+  </div>
+</div>
+
+<script>
+  function mostrarPopup(producto) {
+    document.getElementById("mensajeProducto").innerText = "Has realizado tu compra con éxito: " + producto + ". Pronto estaremos en la puerta de tu casa.";
+    document.getElementById("popup").style.display = "flex";
+  }
+
+  function cerrarPopup() {
+    document.getElementById("popup").style.display = "none";
+  }
+</script>
+
+</body>
+</html>
